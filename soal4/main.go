@@ -6,11 +6,11 @@ import (
 	"time"
 )
 
-const cutiKantorPerTahun = 14
-const masaTungguHari = 180
-const maxCutiPribadiBerturut = 3
-
 func HitungCuti(jumlahCutiBersama int, tanggalJoin, tanggalCuti time.Time, durasiCuti int) (bool, string) {
+	cutiKantorPerTahun := 14
+	masaTungguHari := 180
+	maxCutiPribadiBerturut := 3
+
 	jumlahCutiPribadi := cutiKantorPerTahun - jumlahCutiBersama
 
 	tanggalBisaCuti := tanggalJoin.AddDate(0, 0, masaTungguHari)

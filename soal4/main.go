@@ -10,7 +10,7 @@ const cutiKantorPerTahun = 14
 const masaTungguHari = 180
 const maxCutiPribadiBerturut = 3
 
-func bolehAmbilCuti(jumlahCutiBersama int, tanggalJoin, tanggalCuti time.Time, durasiCuti int) (bool, string) {
+func HitungCuti(jumlahCutiBersama int, tanggalJoin, tanggalCuti time.Time, durasiCuti int) (bool, string) {
 	jumlahCutiPribadi := cutiKantorPerTahun - jumlahCutiBersama
 
 	tanggalBisaCuti := tanggalJoin.AddDate(0, 0, masaTungguHari)
@@ -45,7 +45,7 @@ func main() {
 	tanggalJoin, _ := time.Parse("2006-01-02", tanggalJoinStr)
 	tanggalCuti, _ := time.Parse("2006-01-02", tanggalCutiStr)
 
-	_, alasan := bolehAmbilCuti(jumlahCutiBersama, tanggalJoin, tanggalCuti, durasiCuti)
+	_, alasan := HitungCuti(jumlahCutiBersama, tanggalJoin, tanggalCuti, durasiCuti)
 	fmt.Println("Output:")
 	fmt.Println("False")
 	fmt.Println("Alasan:", alasan)
@@ -59,7 +59,7 @@ func main() {
 	tanggalJoin, _ = time.Parse("2006-01-02", tanggalJoinStr)
 	tanggalCuti, _ = time.Parse("2006-01-02", tanggalCutiStr)
 
-	boleh, alasan := bolehAmbilCuti(jumlahCutiBersama, tanggalJoin, tanggalCuti, durasiCuti)
+	boleh, alasan := HitungCuti(jumlahCutiBersama, tanggalJoin, tanggalCuti, durasiCuti)
 	fmt.Println("Output:")
 	fmt.Println(boleh)
 	fmt.Println("Alasan:", alasan)
